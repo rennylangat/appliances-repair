@@ -1,16 +1,5 @@
 # appliances_repair
 
-A new Flutter project.
+A Flutter Application to find an appliance repairman around you.
+![simulator_screenshot_EA650C5A-969C-4336-ACD6-1795513ADAAE](https://user-images.githubusercontent.com/16797769/133210931-31ed789e-ce76-4f1a-99d1-1a900d2a74c4.png)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
