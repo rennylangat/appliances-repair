@@ -1,3 +1,4 @@
+import 'package:appliances_repair/screens/single_item/single_item.dart';
 import 'package:appliances_repair/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -184,36 +185,44 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ListView.builder(
                         itemCount: repairList.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            margin: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                                color: Colors.blue.shade100.withOpacity(0.5),
-                                borderRadius: BorderRadius.circular(12)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.tv_outlined),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        repairList[index],
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w800),
-                                      ),
-                                      Text("Kitchen")
-                                    ],
-                                  ),
-                                  Icon(
-                                    Icons.arrow_forward_ios_outlined,
-                                    size: 14,
-                                  )
-                                ],
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SingleItem()));
+                            },
+                            child: Container(
+                              margin: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                  color: Colors.blue.shade100.withOpacity(0.5),
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Icon(Icons.tv_outlined),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          repairList[index],
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w800),
+                                        ),
+                                        Text("Kitchen")
+                                      ],
+                                    ),
+                                    Icon(
+                                      Icons.arrow_forward_ios_outlined,
+                                      size: 14,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           );
