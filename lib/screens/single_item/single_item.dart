@@ -1,4 +1,5 @@
 import 'package:appliances_repair/size_config.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class SingleItem extends StatefulWidget {
@@ -9,6 +10,7 @@ class SingleItem extends StatefulWidget {
 }
 
 class _SingleItemState extends State<SingleItem> {
+  bool? acceptedTerms;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +41,7 @@ class _SingleItemState extends State<SingleItem> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: SizeConfig.screenHeight * 0.3,
+                height: SizeConfig.screenHeight * 0.4,
                 width: SizeConfig.screenWidth,
                 decoration: BoxDecoration(color: Colors.indigo.shade50),
                 child: Padding(
@@ -55,7 +57,7 @@ class _SingleItemState extends State<SingleItem> {
                         ),
                       ),
                       SizedBox(
-                        height: getProportionateScreenHeight(20),
+                        height: getProportionateScreenHeight(70),
                       ),
                       Container(
                         width: SizeConfig.screenWidth * 0.15,
@@ -91,6 +93,7 @@ class _SingleItemState extends State<SingleItem> {
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Container(
                           width: SizeConfig.screenWidth * 0.7,
@@ -99,16 +102,94 @@ class _SingleItemState extends State<SingleItem> {
                               borderRadius: BorderRadius.circular(14)),
                           alignment: Alignment.center,
                           child: Padding(
-                            padding: const EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.all(16.0),
                             child: Text(
                               "Reviews",
                               style: TextStyle(
                                   color: Colors.black,
+                                  fontWeight: FontWeight.bold,
                                   fontSize: getProportionateScreenHeight(14)),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(16))),
+                          child: Padding(
+                            padding: const EdgeInsets.all(14.0),
+                            child: Icon(
+                              Icons.message_outlined,
+                              size: getProportionateScreenHeight(16),
+                              color: Colors.white,
                             ),
                           ),
                         )
                       ],
+                    ),
+                    SizedBox(
+                      height: getProportionateScreenHeight(20),
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth * 0.85,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.grey.shade300,
+                          ),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Repair",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize:
+                                            getProportionateScreenHeight(14)),
+                                  ),
+                                  Text("\$80",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize:
+                                              getProportionateScreenHeight(14)))
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Divider(),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("Set up",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize:
+                                              getProportionateScreenHeight(
+                                                  14))),
+                                  Text("\$12",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize:
+                                              getProportionateScreenHeight(14)))
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     )
                   ],
                 ),
